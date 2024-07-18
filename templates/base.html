@@ -1,0 +1,87 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+            NMS App
+        {% endblock title %}
+    </title>
+    <!-- ======================Styles===================== -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_styles %}
+        
+    {% endblock extra_styles %}
+    <!-- ========================JS============================== -->
+     <script src="{% static 'js/main.js' %}" defer></script>
+     {% block extra_scripts %}
+        
+     {% endblock extra_scripts %}
+        
+    
+</head>
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+               <i class="bx bxl-codepen"></i>
+               <span>NMS</span>
+            </div>
+            <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div class="user">
+            <img src="{% static 'img/profile1.jpg' %}" alt="profile picture" class="user-img">
+            <div>
+                <p class="bold">Scooby A.</p>
+                <P>Admin</P>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="{% url 'dashboard' %}">
+                    <i class="bx bx-grid-alt"></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="{% url 'discovery' %}">
+                    <i class="bx bx-wifi"></i>
+                    <span class="nav-item">Discovery</span>
+                </a>
+                <span class="tooltip">Discovery</span>
+            </li>
+            <li>
+                <a href="/monitor">
+                    <i class="bx bx-analyse"></i>
+                    <span class="nav-item">Monitor</span>
+                </a>
+                <span class="tooltip">Monitor</span>
+            </li>
+            <li>
+                <a href="/alerts.html">
+                    <i class="bx bxs-bell"></i>
+                    <span class="nav-item">Alerts</span>
+                </a>
+                <span class="tooltip">Alerts</span>
+            </li>
+            <li>
+                <a href="/inventory.html">
+                    <i class="bx bxs-data"></i>
+                    <span class="nav-item">Inventory</span>
+                </a>
+                <span class="tooltip">Inventory</span>
+            </li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="container">
+            {% block content %}
+            
+            {% endblock content %}
+        </div>     
+    </div>
+</body>
+</html>

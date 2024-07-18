@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Host Discovery
+{% endblock title %}
+
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'scan/css/form.css' %}">
+{% endblock extra_styles %}
+
+
+
+{% block content %}
+    <div class="scan-form">
+        <form method="post" action="">
+            {% csrf_token %}
+            <input type="text" name="", placeholder="Enter IP address or range...">
+            <input type="submit" name="" value="Scan">
+        </form>
+    </div>
+{% endblock content %}
+    
+    
